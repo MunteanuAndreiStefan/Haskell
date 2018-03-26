@@ -169,6 +169,8 @@ memora valoarea intoarsa de program.
 
 -}
 
+
+
 {-
 
 Exercitiul 4
@@ -192,7 +194,7 @@ Exemple:
 -}
 executaProgram :: ValuationPar -> Program -> ValuationPar
 executaProgram valuatie [] = valuatie
--- executaProgram valuatie (i:is) = ...
+executaProgram valuatie (i:is) = executaProgram (executaInstr valuatie i) is
 
 {-
 
@@ -212,5 +214,5 @@ Exemple:
 -- Nothing
 
 -}
---evalProgram :: Program -> Maybe Int
--- evalProgram prog = ...
+evalProgram :: Program -> Maybe Int
+evalProgram prog = (executaProgram empty prog) "result"
