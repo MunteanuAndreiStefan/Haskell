@@ -81,7 +81,9 @@ EXERCITIU: Testati functia de mai sus.
 
 numara_aparitii :: Lista -> Int -> Int
 numara_aparitii ListaVida _ = 0
-numara_aparitii (Cons x xs)n = (numara_aparitii xs n) + if(x == n ) then 1 else 0
+numara_aparitii (Cons x xs)n = (numara_aparitii xs n) + if( x == n ) 
+                                                            then 1
+                                                            else 0
 
 
 suma :: Lista -> Int
